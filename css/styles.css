@@ -60,7 +60,10 @@ label {
     color: #758a9c;
     font-size: 1.1rem;
 }
-input, select {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
     width: 100%;
     height: 60px;
     background-color: #eff1f1;
@@ -75,8 +78,118 @@ input, select {
     position: relative;
     right: 20px;
 }
-input:focus {
+select {
+    text-indent: 20px;
+}
+/* The codes in between the comments are from
+stackoverflow in order to make the <select>
+placeholder 'Choose State' grey, AND turn to black when
+any option is chosen. I tried so many ways without
+having to use the 'required' attribute for <input>
+but I can never get the desired effect.*/
+select:required:invalid {
+    color: #c4c4c4;
+}
+option[value=""][disabled] {
+    display: none;
+  }
+option {
+    color: black;
+}
+/**/
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
     outline: none;
     border: 2px solid #45698b;
     text-indent: 20px;
+}
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+    outline: 2px solid #45698b;
+}
+button:focus {
+    outline: none;
+    border: 2px solid #45698b;
+}
+input#zip {
+    width: 50%;
+    max-width: 200px;
+    margin-bottom: 40px;
+}
+fieldset:first-child {
+    border-bottom: 3px solid #2c3944;
+}
+fieldset:nth-child(2) legend {
+    padding-top: 40px;
+}
+fieldset:nth-child(2) label {
+    display: inline-block;
+    line-height: 1.75rem;
+    margin: 10px 0;
+}
+fieldset label.indent {
+    margin-left: 10px;
+}
+textarea {
+    width: 100%;
+    height: 130px;
+    background-color: #eff1f1;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+textarea:focus {
+    outline: none;
+    border: 2px solid #45698b;
+}
+button {
+    width: 100%;
+    margin: 30px 0 15px 0;
+    height: 80px;
+    background-color: #4ebbb5;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+button:hover {
+    background-color: #47a19d;
+    cursor: pointer;
+}
+button:active {
+    box-shadow: inset 1px 1px 5px 2px #38706c;
+    background-color: #47a19d;
+}
+footer p {
+    text-align: center;
+    margin-bottom: 200px;
+    color: rgb(185, 185, 185);
+}
+
+/*---------- MEDIA QUERIES ----------*/
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 50%;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1.75fr;
+        row-gap: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+        height: 45px;
+    }
+    legend {
+        margin-bottom: 30px;
+    }
+    label {
+        margin: 15px 0 15px 0;
+    }
 }
