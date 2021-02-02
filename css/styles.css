@@ -69,6 +69,7 @@ select {
     background-color: #eff1f1;
     border: none;
     border-radius: 5px;
+    text-indent: 20px;
 }
 ::placeholder {
     text-align: right;
@@ -185,6 +186,9 @@ footer p {
     input[type="tel"],
     select {
         height: 45px;
+    }
+    input#zip {
+        width: 30%;
     }
     legend {
         margin-bottom: 30px;
